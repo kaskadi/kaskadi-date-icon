@@ -1,0 +1,21 @@
+{
+  "name": "@kaskadi/date-icon",
+  "version": "0.0.1",
+  "description": "a simple visual display for dates",
+  "main": "date-icon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "xdg-open localhost:1234/example & serve -l 1234",
+    "push": "aws s3 sync ./ s3://kaskadi-public/modules/@kaskadi/date-icon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaskadi/kaskadi-elements.git"
+  },
+  "author": "Holger Will",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaskadi/kaskadi-elements/issues"
+  },
+  "homepage": "https://github.com/kaskadi/kaskadi-elements#readme"
+}
