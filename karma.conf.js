@@ -2,10 +2,10 @@ module.exports = config => {
     config.set({
     frameworks: ['mocha', 'chai'],
     files: [{pattern: 'test/**/*.js', type: 'module'}, {pattern: '*.js', included: false},],
-    reporters: ['progress','coverage'],
+    reporters: ['progress'],
     port: 9876,  // karma web server port
     colors: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadless'],
     autoWatch: false,
     esm: {
       nodeResolve: true,
