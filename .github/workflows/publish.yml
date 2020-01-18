@@ -1,0 +1,19 @@
+name: publish-element
+on:
+  push:
+    branches:
+      - master
+      - release/**
+    paths:
+      - '**.js'
+      - 'example/index.html'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Upload files to S3 bucket
+      uses: kaskadi/action-s3cp@master
+      env:
+        AWS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+        AWS_KEY_SECRET: ${{ secrets.AWS_KEY_SECRET }}
