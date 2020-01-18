@@ -12,6 +12,7 @@ describe('Array', () => {
       elem.shadowRoot.querySelector('#monat').textContent.should.equal('Apr 75')
       elem.shadowRoot.querySelector('#day').textContent.should.equal('7')
       elem.shadowRoot.querySelector('#name').textContent.should.equal('Montag')
+      elem.getBoundingClientRect().height.should.be(48)
       var cs = getComputedStyle(elem.shadowRoot.querySelector('#outline'))
       cs.stroke.should.equal('rgb(255, 0, 0)')
     })
