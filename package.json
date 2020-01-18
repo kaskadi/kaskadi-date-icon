@@ -1,6 +1,6 @@
 {
   "name": "@kaskadi/date-icon",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "a simple visual display for dates",
   "main": "date-icon.js",
   "scripts": {
