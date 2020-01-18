@@ -10,6 +10,9 @@ class KaskadiDateIcon extends LitElement {
   }
   static get styles () {
     return css`
+      :host{
+        display:inline-block;
+      }
       #bg{
         fill: var(--background-color, white);
       }
