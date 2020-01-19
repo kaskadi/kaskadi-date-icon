@@ -5,12 +5,22 @@ class KaskadiDateIcon extends LitElement {
     super()
     this.size = 64
     this._date = new Date()
-    this.weekDayNames = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag']
-    this.monthNames = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+    this.lang = "de"
+    this.weekDayNames = {
+      de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+      en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    }
+    this.monthNames = {
+      de: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']
+    }
   }
 
   static get styles () {
     return css`
+      svg::after{
+        content: var(--kaskadi-lang);
+      }
       :host{
         width:var(--icon-size, 48px);
         height:var(--icon-size, 48px);
@@ -55,10 +65,10 @@ class KaskadiDateIcon extends LitElement {
 
   static get properties () {
     return {
-      date: { type: String }
+      date: { type: String },
+      lang: { type: String }
     }
   }
-
   // *** Rendering of our element into the DOM ***
   render () {
     if (this.date) {
@@ -69,11 +79,12 @@ class KaskadiDateIcon extends LitElement {
       <rect id="bg" x="5" y="5" width="90" height="90" rx="15"/>
       <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
       <rect id="outline" x="5" y="5" width="90" height="90" rx="15"/>
-      <text x="50" y="22.5" id="monat" class="txt" >${this.monthNames[this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
+      <text x="50" y="22.5" id="monat" class="txt" >${this.monthNames[this.lang][this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
       <text x="50" y="58" id="day" class="txt">${this._date.getDate()}</text>
-      <text x="50" y="82" id="name" class="txt" >${this.weekDayNames[this._date.getDay()]}</text>
+      <text x="50" y="82" id="name" class="txt" >${this.weekDayNames[this.lang][this._date.getDay()]}</text>
    </svg>`
   }
 }
-// Element export
+
+
 customElements.define('kaskadi-date-icon', KaskadiDateIcon)
