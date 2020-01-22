@@ -18,9 +18,6 @@ class KaskadiDateIcon extends LitElement {
 
   static get styles () {
     return css`
-      svg::after{
-        content: var(--kaskadi-lang);
-      }
       :host{
         width:var(--icon-size, 48px);
         height:var(--icon-size, 48px);
@@ -30,31 +27,19 @@ class KaskadiDateIcon extends LitElement {
         fill: var(--background-color, white);
       }
       #outline{
-        fill: none;
         stroke: var(--outline-color, #333);
-        stroke-width: 5px
       }
       #head{
         fill: var(--head-color, royalblue)
       }
-      .txt{
-        text-anchor:middle;
-        dominant-baseline: middle;
-
-      }
       #day{
-        font-size:35px;
         fill: var(--day-color, var(--outline-color, #333));
-        font-weight:bold;
       }
       #monat{
         fill: var(--month-color, white);
-        font-weight:bold;
-        font-size:18px;
       }
       #name{
         fill: var(--name-color, var(--outline-color, #333));
-        font-size:14px;
       }
       svg{
         width:var(--icon-size, 48px);
@@ -78,10 +63,12 @@ class KaskadiDateIcon extends LitElement {
     <svg viewBox="0 0 100 100">
       <rect id="bg" x="5" y="5" width="90" height="90" rx="15"/>
       <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
-      <rect id="outline" x="5" y="5" width="90" height="90" rx="15"/>
-      <text x="50" y="22.5" id="monat" class="txt" >${this.monthNames[this.lang][this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
-      <text x="50" y="58" id="day" class="txt">${this._date.getDate()}</text>
-      <text x="50" y="82" id="name" class="txt" >${this.weekDayNames[this.lang][this._date.getDay()]}</text>
+      <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke="5"/>
+      <g text-anchor="middle" dominant-baseline="middle" font-weight="bold">
+        <text x="50" y="22.5" id="monat" class="txt" font-size="18">${this.monthNames[this.lang][this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
+        <text x="50" y="58" id="day" class="txt" font-size="35">${this._date.getDate()}</text>
+        <text x="50" y="82" id="name" class="txt" font-size="14px" font-weight="200"  >${this.weekDayNames[this.lang][this._date.getDay()]}</text>
+      </g>
    </svg>`
   }
 }
