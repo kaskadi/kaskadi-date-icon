@@ -18,33 +18,18 @@ class KaskadiDateIcon extends LitElement {
 
   static get styles () {
     return css`
-      :host{
+      :host, svg{
         width:var(--icon-size, 48px);
         height:var(--icon-size, 48px);
         display: inline-block;
       }
-      #bg{
-        fill: var(--background-color, white);
-      }
-      #outline{
-        stroke: var(--outline-color, #333);
-      }
-      #head{
-        fill: var(--head-color, royalblue)
-      }
-      #day{
-        fill: var(--day-color, var(--outline-color, #333));
-      }
-      #monat{
-        fill: var(--month-color, white);
-      }
-      #name{
-        fill: var(--name-color, var(--outline-color, #333));
-      }
-      svg{
-        width:var(--icon-size, 48px);
-        height:var(--icon-size, 48px);
-      }
+      #bg { fill: var(--background-color, white) }
+      #outline { stroke: var(--outline-color, #333) }
+      #head { fill: var(--head-color, royalblue) }
+      #day { fill: var(--day-color, var(--outline-color, #333)) }
+      #monat { fill: var(--month-color, white) }
+      #name { fill: var(--name-color, var(--outline-color, #333)) }
+
     `
   }
 
@@ -54,7 +39,7 @@ class KaskadiDateIcon extends LitElement {
       lang: { type: String }
     }
   }
-  // *** Rendering of our element into the DOM ***
+
   render () {
     if (this.date) {
       this._date = new Date(this.date)
@@ -63,7 +48,7 @@ class KaskadiDateIcon extends LitElement {
     <svg viewBox="0 0 100 100">
       <rect id="bg" x="5" y="5" width="90" height="90" rx="15"/>
       <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
-      <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke="5"/>
+      <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke-width="5"/>
       <g text-anchor="middle" dominant-baseline="middle" font-weight="bold">
         <text x="50" y="22.5" id="monat" class="txt" font-size="18">${this.monthNames[this.lang][this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
         <text x="50" y="58" id="day" class="txt" font-size="35">${this._date.getDate()}</text>
