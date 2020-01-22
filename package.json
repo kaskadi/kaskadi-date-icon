@@ -1,15 +1,12 @@
 {
-  "name": "@kaskadi/date-icon",
+  "name": "@kaskadi/kaskadi-date-icon",
   "version": "1.0.1",
   "description": "a simple visual display for dates",
   "main": "date-icon.js",
   "scripts": {
     "example": "xdg-open localhost:1234/example && serve -l 1234",
     "push": "aws s3 sync ./ s3://kaskadi-public/modules/@kaskadi/date-icon",
-    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
-    "test:watch": "karma start --auto-watch=true --single-run=false",
-    "test:update-snapshots": "karma start --update-snapshots",
-    "test:prune-snapshots": "karma start --prune-snapshots"
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -33,10 +30,10 @@
     "s3-push": {
       "files": [{
         "src": "date-icon.js",
-        "dest": "modules/@kaskadi/date-icon/{branch}date-icon.js"
+        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}kaskadi-date-icon.js"
       }, {
         "src": "example/index.html",
-        "dest": "modules/@kaskadi/date-icon/{branch}example/index.html"
+        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}example/index.html"
       }]
     }
   }
