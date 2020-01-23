@@ -23,21 +23,26 @@
     "karma": "^4.4.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.1",
     "karma-mocha": "^1.3.0",
     "mocha": "^7.0.0"
   },
   "kaskadi": {
     "s3-push": {
-      "files": [{
-        "src": "date-icon.js",
-        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}kaskadi-date-icon.js"
-      },{
-        "src": "loclas.js",
-        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}locals.js"
-      }, {
-        "src": "example/index.html",
-        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}example/index.html"
-      }]
+      "files": [
+        {
+          "src": "date-icon.js",
+          "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}kaskadi-date-icon.js"
+        },
+        {
+          "src": "loclas.js",
+          "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}locals.js"
+        },
+        {
+          "src": "example/index.html",
+          "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}example/index.html"
+        }
+      ]
     }
   }
 }
