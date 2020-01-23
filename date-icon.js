@@ -46,7 +46,7 @@ class KaskadiDateIcon extends LitElement {
     }
     return html`
     <svg viewBox="0 0 100 100">
-      <rect id="bg" x="5" y="5" width="90" height="90" rx="15"/>
+      <rect id="bg" x="5" y="5" width="90" height="90" rx="15" title="bg"/>
       <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
       <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke-width="5"/>
       <g text-anchor="middle" dominant-baseline="middle" font-weight="bold">
