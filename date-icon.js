@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'https://cdn.klimapartner.net/modules/lit-element/lit-element.js'
-
+import './locals'
 class KaskadiDateIcon extends LitElement {
   constructor () {
     super()
