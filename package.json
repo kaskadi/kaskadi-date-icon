@@ -31,6 +31,9 @@
       "files": [{
         "src": "date-icon.js",
         "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}kaskadi-date-icon.js"
+      },{
+        "src": "loclas.js",
+        "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}locals.js"
       }, {
         "src": "example/index.html",
         "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}example/index.html"
