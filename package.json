@@ -35,7 +35,7 @@
           "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}kaskadi-date-icon.js"
         },
         {
-          "src": "loclas.js",
+          "src": "locals.js",
           "dest": "modules/@kaskadi/kaskadi-date-icon/{branch}locals.js"
         },
         {
