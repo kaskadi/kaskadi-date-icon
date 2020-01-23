@@ -1,3 +1,22 @@
+**GitHub Actions workflows status**
+
+<!--Uncomment if you're in a branch which is not master or release/*
+![](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/testing?label=test)-->
+<!-- This badge should only be used for master and release/* branches. Otherwise use the one above -->
+![](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/publish?label=build)
+
+**CodeClimate**
+
+![](https://img.shields.io/codeclimate/maintainability/kaskadi/kaskadi-date-icon)
+![](https://img.shields.io/codeclimate/tech-debt/kaskadi/kaskadi-date-icon)
+![](https://img.shields.io/codeclimate/coverage/kaskadi/kaskadi-date-icon)
+
+**LGTM**
+
+[![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon)]
+(https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list)
+
+
 # kaskadi-date-icon
 
 an icon to display date information.
