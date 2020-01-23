@@ -13,8 +13,7 @@
 
 **LGTM**
 
-[![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon)]
-(https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list)
+[![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon)](https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list)
 
 
 # kaskadi-date-icon
