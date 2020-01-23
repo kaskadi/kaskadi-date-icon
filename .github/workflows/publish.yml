@@ -1,18 +1,24 @@
-name: publish-element
+name: publish
 on:
   push:
     branches:
-      - master
-      - release/**
+      - 'master'
+      - 'release/**'
     paths:
       - '**.js'
       - 'example/index.html'
-      - 'package.json'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - name: Install dependencies
+      run: npm i
+    - uses: paambaati/codeclimate-action@v2.4.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.REPORTER_ID }}
+      with:
+        coverageCommand: npm test
     - name: Upload files to S3 bucket
       uses: kaskadi/action-s3cp@master
       env:
