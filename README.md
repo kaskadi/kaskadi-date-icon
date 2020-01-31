@@ -1,3 +1,9 @@
+![](https://img.shields.io/github/package-json/v/kaskadi/kaskadi-date-icon)
+![](https://img.shields.io/badge/code--style-standard-blue)
+![](https://img.shields.io/github/license/kaskadi/kaskadi-date-icon?color=blue)
+
+[![](https://img.shields.io/badge/live-example-orange)](https://cdn.klimapartner.net/modules/%40kaskadi/kaskadi-date-icon/example/index.html)
+
 **GitHub Actions workflows status**
 
 <!--Uncomment if you're in a branch which is not master or release/*
@@ -7,9 +13,9 @@
 
 **CodeClimate**
 
-![](https://img.shields.io/codeclimate/maintainability/kaskadi/kaskadi-date-icon)
-![](https://img.shields.io/codeclimate/tech-debt/kaskadi/kaskadi-date-icon)
-![](https://img.shields.io/codeclimate/coverage/kaskadi/kaskadi-date-icon)
+[![](https://img.shields.io/codeclimate/maintainability/kaskadi/kaskadi-date-icon?label=maintainability&logo=Code%20Climate)](https://codeclimate.com/github/kaskadi/kaskadi-date-icon)
+[![](https://img.shields.io/codeclimate/tech-debt/kaskadi/kaskadi-date-icon?label=technical%20debt&logo=Code%20Climate)](https://codeclimate.com/github/kaskadi/kaskadi-date-icon)
+[![](https://img.shields.io/codeclimate/coverage/kaskadi/kaskadi-date-icon?label=test%20coverage&logo=Code%20Climate)](https://codeclimate.com/github/kaskadi/kaskadi-date-icon)
 
 **LGTM**
 
