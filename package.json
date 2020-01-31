@@ -2,7 +2,7 @@
   "name": "@kaskadi/kaskadi-date-icon",
   "version": "1.0.1",
   "description": "a simple visual display for dates",
-  "main": "date-icon.js",
+  "main": "kaskadi-date-icon.js",
   "scripts": {
     "example": "xdg-open localhost:1234/example && serve -l 1234",
     "push": "aws s3 sync ./ s3://kaskadi-public/modules/@kaskadi/date-icon",

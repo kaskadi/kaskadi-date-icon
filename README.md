@@ -31,7 +31,7 @@ an icon to display date information.
 # import
 
 ```
-import 'https://cdn.klimapartner.net/modules/@kaskadi/date-icon.js'
+import 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon.js'
 ```
 
 # usage

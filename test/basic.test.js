@@ -1,5 +1,5 @@
-import '../date-icon.js'
-describe('date-icon', () => {
+import '../kaskadi-date-icon.js'
+describe('kaskadi-date-icon', () => {
   it('testing', async () => {
     var elem = document.createElement('kaskadi-date-icon')
     elem.setAttribute('date', '1975-04-07')
