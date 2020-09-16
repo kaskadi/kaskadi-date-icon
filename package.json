@@ -5,8 +5,12 @@
   "main": "kaskadi-date-icon.js",
   "scripts": {
     "example": "xdg-open localhost:1234/example && serve -l 1234",
-    "push": "aws s3 sync ./ s3://kaskadi-public/modules/@kaskadi/date-icon",
-    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
+    "test": "npm run lint && npm run test.All",
+    "test.FF": "karma start --single-run --browsers FirefoxHeadless karma.conf.js",
+    "test.Chrome": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "test.All": "karma start --single-run --browsers ChromeHeadless,FirefoxHeadless karma.conf.js",
+    "lint": "standard --fix",
+    "coverage": "npm run lint && npm run test.Chrome"
   },
   "repository": {
     "type": "git",
