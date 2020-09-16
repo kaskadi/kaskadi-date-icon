@@ -7,6 +7,8 @@
 **GitHub Actions workflows status**
 
 [![Build status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/build?label=build&logo=mocha)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Abuild)
+[![BuildFF status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/build-on-firefox?label=firefox&logo=Mozilla%20Firefox&logoColor=white)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Abuild-on-firefox)
+[![BuildChrome status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/build-on-chrome?label=chrome&logo=Google%20Chrome&logoColor=white)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Abuild-on-chrome)
 [![Publish status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/publish?label=publish&logo=Amazon%20AWS)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Apublish)
 
 **CodeClimate**
@@ -17,8 +19,9 @@
 
 **LGTM**
 
-[![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon)](https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list)
+[![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon?label=code%20quality&logo=LGTM)](https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list&logo=LGTM)
 
+****
 
 # kaskadi-date-icon
 
