@@ -1,8 +1,8 @@
 export const locals = {
   monday: {
-    en: "Monday",
-    de: "Montag",
-    fr: "Lundi"
+    en: 'Monday',
+    de: 'Montag',
+    fr: 'Lundi'
   }
 }
 

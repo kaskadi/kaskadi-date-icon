@@ -1,3 +1,4 @@
+/* eslint-env browser, mocha */
 import '../kaskadi-date-icon.js'
 describe('kaskadi-date-icon', () => {
   it('testing', async () => {
@@ -5,7 +6,7 @@ describe('kaskadi-date-icon', () => {
     elem.setAttribute('date', '1975-04-07')
     elem.setAttribute('style', '--outline-color: rgb(255, 0, 0)')
     document.body.appendChild(elem)
-    const res = await elem.updateComplete
+    await elem.updateComplete
     elem.should.have.property('date')
     elem.should.have.property('_date')
     elem.shadowRoot.querySelector('#monat').textContent.should.equal('Apr 75')

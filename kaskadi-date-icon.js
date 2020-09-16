@@ -1,3 +1,4 @@
+/* global customElements */
 import { html, css, LitElement } from 'https://cdn.klimapartner.net/modules/lit-element/lit-element.js'
 import './locals.js'
 class KaskadiDateIcon extends LitElement {
@@ -5,7 +6,7 @@ class KaskadiDateIcon extends LitElement {
     super()
     this.size = 64
     this._date = new Date()
-    this.lang = "de"
+    this.lang = 'de'
     this.weekDayNames = {
       de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
       en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
@@ -57,6 +58,5 @@ class KaskadiDateIcon extends LitElement {
    </svg>`
   }
 }
-
 
 customElements.define('kaskadi-date-icon', KaskadiDateIcon)
