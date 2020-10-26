@@ -1,7 +1,7 @@
 /* global customElements */
-import { html, css, LitElement } from 'https://cdn.klimapartner.net/modules/lit-element/lit-element.js'
+import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-element/kaskadi-element.js'
 import './locals.js'
-class KaskadiDateIcon extends LitElement {
+class KaskadiDateIcon extends KaskadiElement {
   constructor () {
     super()
     this.size = 64
