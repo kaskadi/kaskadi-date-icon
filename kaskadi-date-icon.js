@@ -1,6 +1,6 @@
 /* global customElements */
 import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-element/kaskadi-element.js'
-import './locals.js'
+
 class KaskadiDateIcon extends KaskadiElement {
   constructor () {
     super()
