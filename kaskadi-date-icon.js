@@ -1,6 +1,22 @@
 /* global customElements */
 import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-element/kaskadi-element.js'
 
+/**
+ * An element to display a date as a calendar icon.
+ *
+ * This also supports styling via custom CSS properties.
+ *
+ * @module kaskadi-date-icon
+ *
+ * @param {string} date - date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+ * @param {string} lang - element's language
+ * @param {string} style - regular inline style. See the live example for illustration. Supports the following custom CSS properties: `--icon-size`, `--background-color`, `--outline-color`, `--head-color`, `--day-color`, `--month-color` and `--name-color`
+ *
+ * @example
+ *
+ * <kaskadi-date-icon date="1975-04-07" lang="en" style="--icon-size: 16px;"></kaskadi-date-icon>
+ */
+
 class KaskadiDateIcon extends KaskadiElement {
   constructor () {
     super()
