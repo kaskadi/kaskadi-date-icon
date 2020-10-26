@@ -10,6 +10,7 @@
 [![BuildFF status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/build-on-firefox?label=firefox&logo=Mozilla%20Firefox&logoColor=white)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Abuild-on-firefox)
 [![BuildChrome status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/build-on-chrome?label=chrome&logo=Google%20Chrome&logoColor=white)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Abuild-on-chrome)
 [![Publish status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/publish?label=publish&logo=Amazon%20AWS)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Apublish)
+[![Docs generation status](https://img.shields.io/github/workflow/status/kaskadi/kaskadi-date-icon/generate-docs?label=docs&logo=read-the-docs)](https://github.com/kaskadi/kaskadi-date-icon/actions?query=workflow%3Agenerate-docs)
 
 **CodeClimate**
 
@@ -21,43 +22,51 @@
 
 [![](https://img.shields.io/lgtm/grade/javascript/github/kaskadi/kaskadi-date-icon?label=code%20quality&logo=LGTM)](https://lgtm.com/projects/g/kaskadi/kaskadi-date-icon/?mode=list&logo=LGTM)
 
+<!-- You can add badges inside of this section if you'd like -->
+
 ****
 
-# kaskadi-date-icon
+<!-- automatically generated documentation will be placed in here -->
+# Usage instructions
 
-an icon to display date information.
-
-![image](https://user-images.githubusercontent.com/10807348/72425594-65ba2780-3788-11ea-8c5e-d94af7111c77.png)
-
-# import
-
-```
-import 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon.js'
-```
-
-# usage
-
-```
-<kaskadi-date-icon></kaskadi-date-icon>
+In another element:
+```js
+// using the latest version
+import 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon/kaskadi-date-icon.js'
+// using a specific version
+import 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon/release/v1.0.0/kaskadi-date-icon.js'
 ```
 
-## attributes
+In the browser:
+```html
+<!-- using the latest version -->
+<script type="module" src="https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon/kaskadi-date-icon.js"></script>
+<!-- using a specific version -->
+<script type="module" src="https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-date-icon/release/v1.0.0/kaskadi-date-icon.js"></script>
+```
 
-| name | description | example | result |
-| --- | --- | --- | --- |
-| date | sets a date, syntax: `year-month-day`. you can pass whatever `Date()` returns | `date="1995-12-17"` | ![image](https://user-images.githubusercontent.com/10807348/72427362-e169a380-378b-11ea-9fc9-74baec61cc6b.png) |
+# Custom element documentation
 
-## properties
+## kaskadi-date-icon
 
-| name | description | example | result |
-| ---- | --- | --- | --- |
-| --icon-size | the size of the icon | `--icon-size: 64px` | ![image](https://user-images.githubusercontent.com/10807348/72427581-54731a00-378c-11ea-84f5-dfea7da0059d.png) |
-| --outline-color | color of the outline. (`--day-color and` `--name-color` default to `--outline-color` when not explicitely set) | `--outline-color: grey;` | ![image](https://user-images.githubusercontent.com/10807348/72427959-11fe0d00-378d-11ea-95aa-a4219b596e21.png) |
-| --head-color | color of the month header | `--head-color: crimson` | ![image](https://user-images.githubusercontent.com/10807348/72428053-3823ad00-378d-11ea-9091-fea62df21250.png) |
-| --day-color | the day color | `--day-color: crimson` | ![image](https://user-images.githubusercontent.com/10807348/72428194-7f11a280-378d-11ea-8d74-15ee4d13f75c.png) |
-| --name-color | color of the weekday name | `--name-color: crimson` | ![image](https://user-images.githubusercontent.com/10807348/72428621-62c23580-378e-11ea-8f1e-2c68fec35456.png) |
-| --month-color | color of the month and year | `--month-color: crimson` | ![image](https://user-images.githubusercontent.com/10807348/72428738-98671e80-378e-11ea-8849-0e35dca2d378.png) |
-| --background-color | color of the month and year | `--background-color: beige` | ![image](https://user-images.githubusercontent.com/10807348/72429120-7c17b180-378f-11ea-827a-dffbb281571d.png) |
+An element to display a date as a calendar icon.
+
+This also supports styling via custom CSS properties.
 
 
-[see the example](https://cdn.klimapartner.net/modules/@kaskadi/date-icon/example/index.html)
+| Param | Type | Description |
+| --- | --- | --- |
+| date | `string` | date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API] |
+| lang | `string` | element's language |
+| style | `string` | regular inline style. See the live example for illustration. Supports the following custom CSS properties: `--icon-size`, `--background-color`, `--outline-color`, `--head-color`, `--day-color`, `--month-color` and `--name-color` |
+
+**Example**  
+```html
+<kaskadi-date-icon date="1975-04-07" lang="en" style="--icon-size: 16px;"></kaskadi-date-icon>
+```
+<!-- LINKS -->
+
+[Date API]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+<!-- automatically generated documentation will be placed in here -->
+
+<!-- You can customize this template as you'd like! -->
