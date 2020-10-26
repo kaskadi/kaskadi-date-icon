@@ -18,4 +18,10 @@ describe('kaskadi-date-icon', () => {
     var cs = getComputedStyle(elem.shadowRoot.querySelector('#outline'))
     cs.stroke.should.equal('rgb(255, 0, 0)')
   })
+  it('testing no date', async () => {
+    var elem = document.createElement('kaskadi-date-icon')
+    document.body.appendChild(elem)
+    await elem.updateComplete
+    elem.should.have.property('_date')
+  })
 })

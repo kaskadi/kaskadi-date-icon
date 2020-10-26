@@ -1,7 +1,23 @@
 /* global customElements */
-import { html, css, LitElement } from 'https://cdn.klimapartner.net/modules/lit-element/lit-element.js'
-import './locals.js'
-class KaskadiDateIcon extends LitElement {
+import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-element/kaskadi-element.js'
+
+/**
+ * An element to display a date as a calendar icon.
+ *
+ * This also supports styling via custom CSS properties.
+ *
+ * @module kaskadi-date-icon
+ *
+ * @param {string} date - date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+ * @param {string} lang - element's language
+ * @param {string} style - regular inline style. See the live example for illustration. Supports the following custom CSS properties: `--icon-size`, `--background-color`, `--outline-color`, `--head-color`, `--day-color`, `--month-color` and `--name-color`
+ *
+ * @example
+ *
+ * <kaskadi-date-icon date="1975-04-07" lang="en" style="--icon-size: 16px;"></kaskadi-date-icon>
+ */
+
+class KaskadiDateIcon extends KaskadiElement {
   constructor () {
     super()
     this.size = 64
@@ -9,11 +25,13 @@ class KaskadiDateIcon extends LitElement {
     this.lang = 'de'
     this.weekDayNames = {
       de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-      en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      fr: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
     }
     this.monthNames = {
-      de: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
-      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec']
+      de: ['Jan', 'Feb', 'M\u00e4r', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      fr: ['Jan', 'F\u00e9v', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Ao\u00fbt', 'Sep', 'Oct', 'Nov', 'Dec']
     }
   }
 
