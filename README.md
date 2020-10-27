@@ -58,7 +58,6 @@ This also supports styling via custom CSS properties.
 | --- | --- | --- |
 | date | `string` | date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API] |
 | lang | `string` | element's language |
-| style | `string` | regular inline style. See the live example for illustration. Supports the following custom CSS properties: `--icon-size`, `--background-color`, `--outline-color`, `--head-color`, `--day-color`, `--month-color` and `--name-color` |
 
 **Example**  
 ```html
@@ -67,6 +66,18 @@ This also supports styling via custom CSS properties.
 <!-- LINKS -->
 
 [Date API]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+
+## Custom styles
+
+The following custom CSS properties are available for this element:
+
+- `--icon-size`
+- `--background-color`
+- `--outline-color`
+- `--head-color`
+- `--day-color`
+- `--month-color`
+- `--name-color`
 <!-- automatically generated documentation will be placed in here -->
 
 <!-- You can customize this template as you'd like! -->
