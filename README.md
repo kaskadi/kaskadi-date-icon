@@ -53,18 +53,20 @@ An element to display a date as a calendar icon.
 
 This also supports styling via custom CSS properties.
 
+This element inherits properties from a base class `KaskadiElement`. To see which properties are available, please refer to [`KaskadiElement` documentation].
 
-| Param | Type | Description |
-| --- | --- | --- |
-| date | `string` | date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API] |
-| lang | `string` | element's language |
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| \[date\] | `string` | `'current date'` | date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API] |
 
 **Example**  
 ```html
-<kaskadi-date-icon date="1975-04-07" lang="en" style="--icon-size: 16px;"></kaskadi-date-icon>
+<kaskadi-date-icon date="1975-04-07" style="--icon-size: 16px;"></kaskadi-date-icon>
 ```
 <!-- LINKS -->
 
+[`KaskadiElement` documentation]:https://github.com/kaskadi/kaskadi-element
 [Date API]:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
 
 ## Custom styles
