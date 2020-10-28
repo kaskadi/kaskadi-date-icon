@@ -27,7 +27,7 @@ class KaskadiDateIcon extends KaskadiElement {
 
   static get styles () {
     return css`
-      :host, svg{
+      :host, svg {
         width:var(--icon-size, 48px);
         height:var(--icon-size, 48px);
         display: inline-block;
