@@ -5,7 +5,8 @@ on:
       - 'master'
       - 'release/**'
     paths:
-      - '**.js'
+      - '*.js'
+      - '!karma.conf.js'
       - 'example/index.html'
       - 'package.json'
 env:

@@ -5,7 +5,8 @@ on:
       - 'master'
       - 'release/**'
     paths:
-      - '**.js'
+      - '*.js'
+      - '!karma.conf.js'
       - 'package.json'
       - 'docs/**'
 jobs:
