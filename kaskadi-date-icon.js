@@ -1,5 +1,7 @@
 /* global customElements */
 import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/@kaskadi/kaskadi-element/kaskadi-element.js'
+import locals from './locals.js'
+const { weekDayNames, monthNames } = locals
 
 /**
  * An element to display a date as a calendar icon.
@@ -20,18 +22,7 @@ import { KaskadiElement, css, html } from 'https://cdn.klimapartner.net/modules/
 class KaskadiDateIcon extends KaskadiElement {
   constructor () {
     super()
-    this.size = 64
-    this._date = new Date()
-    this.weekDayNames = {
-      en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-      fr: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
-    }
-    this.monthNames = {
-      en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      de: ['Jan', 'Feb', 'M\u00e4r', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
-      fr: ['Jan', 'F\u00e9v', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Ao\u00fbt', 'Sep', 'Oct', 'Nov', 'Dec']
-    }
+    this.date = Date.now()
   }
 
   static get styles () {
@@ -41,12 +32,23 @@ class KaskadiDateIcon extends KaskadiElement {
         height:var(--icon-size, 48px);
         display: inline-block;
       }
-      #bg { fill: var(--background-color, white) }
-      #outline { stroke: var(--outline-color, #333) }
-      #head { fill: var(--head-color, royalblue) }
-      #day { fill: var(--day-color, var(--outline-color, #333)) }
-      #monat { fill: var(--month-color, white) }
-      #name { fill: var(--name-color, var(--outline-color, #333)) }
+      #bg {
+        fill: var(--background-color, white);
+      }
+      #outline {
+        stroke: var(--outline-color, #333);
+      }
+      #head {
+        fill: var(--head-color, royalblue);
+      }
+      #day {
+        fill: var(--day-color, var(--outline-color, #333));
+      }
+      #month {fill: var(--month-color, white);
+      }
+      #name {
+        fill: var(--name-color, var(--outline-color, #333));
+      }
     `
   }
 
@@ -57,18 +59,16 @@ class KaskadiDateIcon extends KaskadiElement {
   }
 
   render () {
-    if (this.date) {
-      this._date = new Date(this.date)
-    }
+    const date = new Date(this.date)
     return html`
     <svg viewBox="0 0 100 100">
       <rect id="bg" x="5" y="5" width="90" height="90" rx="15" title="bg"/>
       <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
       <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke-width="5"/>
       <g text-anchor="middle" dominant-baseline="middle" font-weight="bold">
-        <text x="50" y="22.5" id="monat" class="txt" font-size="18">${this.monthNames[this.lang][this._date.getMonth()]} ${this._date.getFullYear() % 100}</text>
-        <text x="50" y="58" id="day" class="txt" font-size="35">${this._date.getDate()}</text>
-        <text x="50" y="82" id="name" class="txt" font-size="14px" font-weight="200"  >${this.weekDayNames[this.lang][this._date.getDay()]}</text>
+        <text x="50" y="22.5" id="month" class="txt" font-size="18">${monthNames[this.lang][date.getMonth()]} ${date.getFullYear() % 100}</text>
+        <text x="50" y="58" id="day" class="txt" font-size="35">${date.getDate()}</text>
+        <text x="50" y="82" id="name" class="txt" font-size="14px" font-weight="200"  >${weekDayNames[this.lang][date.getDay()]}</text>
       </g>
    </svg>`
   }

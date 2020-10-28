@@ -1,28 +1,38 @@
 /* eslint-env browser, mocha */
 import '../kaskadi-date-icon.js'
+import locals from '../locals.js'
+const { weekDayNames, monthNames } = locals
+
 describe('kaskadi-date-icon', () => {
-  it('should render a date as a calendar', async () => {
-    var elem = document.createElement('kaskadi-date-icon')
-    elem.setAttribute('lang', 'de')
-    elem.setAttribute('date', '1975-04-07')
-    elem.setAttribute('style', '--outline-color: rgb(255, 0, 0)')
+  let elem
+  before(async () => {
+    elem = document.createElement('kaskadi-date-icon')
     document.body.appendChild(elem)
     await elem.updateComplete
-    elem.should.have.property('date')
-    elem.should.have.property('_date')
-    elem.shadowRoot.querySelector('#monat').textContent.should.equal('Apr 75')
-    elem.shadowRoot.querySelector('#day').textContent.should.equal('7')
-    elem.shadowRoot.querySelector('#name').textContent.should.equal('Montag')
-    var bcr = elem.getBoundingClientRect()
+  })
+  it('should handle custom CSS styles', async () => {
+    elem.setAttribute('style', '--outline-color: rgb(255, 0, 0)')
+    await elem.updateComplete
+    const bcr = elem.getBoundingClientRect()
     bcr.height.should.equal(48)
     bcr.width.should.equal(48)
-    var cs = getComputedStyle(elem.shadowRoot.querySelector('#outline'))
+    const cs = getComputedStyle(elem.shadowRoot.querySelector('#outline'))
     cs.stroke.should.equal('rgb(255, 0, 0)')
   })
   it('should handle absence of date attribute', async () => {
-    var elem = document.createElement('kaskadi-date-icon')
-    document.body.appendChild(elem)
+    elem.should.have.property('date')
+    const date = new Date()
+    elem.shadowRoot.querySelector('#month').textContent.should.equal(`${monthNames.en[date.getMonth()]} ${date.getFullYear() % 100}`)
+    elem.shadowRoot.querySelector('#day').textContent.should.equal(`${date.getDate()}`)
+    elem.shadowRoot.querySelector('#name').textContent.should.equal(`${weekDayNames.en[date.getDay()]}`)
+  })
+  it('should render a date as a calendar', async () => {
+    elem.setAttribute('lang', 'de')
+    elem.setAttribute('date', '1975-04-07')
     await elem.updateComplete
-    elem.should.have.property('_date')
+    elem.should.have.property('date')
+    elem.shadowRoot.querySelector('#month').textContent.should.equal('Apr 75')
+    elem.shadowRoot.querySelector('#day').textContent.should.equal('7')
+    elem.shadowRoot.querySelector('#name').textContent.should.equal('Montag')
   })
 })
