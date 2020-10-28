@@ -1,8 +1,9 @@
 /* eslint-env browser, mocha */
 import '../kaskadi-date-icon.js'
 describe('kaskadi-date-icon', () => {
-  it('testing', async () => {
+  it('should render a date as a calendar', async () => {
     var elem = document.createElement('kaskadi-date-icon')
+    elem.setAttribute('lang', 'de')
     elem.setAttribute('date', '1975-04-07')
     elem.setAttribute('style', '--outline-color: rgb(255, 0, 0)')
     document.body.appendChild(elem)
@@ -18,7 +19,7 @@ describe('kaskadi-date-icon', () => {
     var cs = getComputedStyle(elem.shadowRoot.querySelector('#outline'))
     cs.stroke.should.equal('rgb(255, 0, 0)')
   })
-  it('testing no date', async () => {
+  it('should handle absence of date attribute', async () => {
     var elem = document.createElement('kaskadi-date-icon')
     document.body.appendChild(elem)
     await elem.updateComplete
