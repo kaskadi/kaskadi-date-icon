@@ -75,7 +75,7 @@ The following custom CSS properties are available for this element:
 
 | CSS property name  |   Default   |
 | :----------------- | :---------: |
-| --icon-size        |    `16px`   |
+| --icon-size        |    `48px`   |
 | --background-color |   `white`   |
 | --outline-color    |    `#333`   |
 | --head-color       | `royalblue` |
