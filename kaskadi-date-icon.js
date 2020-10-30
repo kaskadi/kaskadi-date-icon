@@ -27,27 +27,37 @@ class KaskadiDateIcon extends KaskadiElement {
 
   static get styles () {
     return css`
+      :host {
+        --icon-size: 48px;
+        --background-color: white;
+        --outline-color: #333;
+        --head-color: royalblue;
+        --day-color: #333;
+        --month-color: white;
+        --name-color: #333;
+      }
       :host, svg {
-        width:var(--icon-size, 48px);
-        height:var(--icon-size, 48px);
+        width: var(--icon-size);
+        height: var(--icon-size);
         display: inline-block;
       }
       #bg {
-        fill: var(--background-color, white);
+        fill: var(--background-color);
       }
       #outline {
-        stroke: var(--outline-color, #333);
+        stroke: var(--outline-color);
       }
       #head {
-        fill: var(--head-color, royalblue);
+        fill: var(--head-color);
       }
       #day {
-        fill: var(--day-color, var(--outline-color, #333));
+        fill: var(--day-color);
       }
-      #month {fill: var(--month-color, white);
+      #month {
+        fill: var(--month-color);
       }
       #name {
-        fill: var(--name-color, var(--outline-color, #333));
+        fill: var(--name-color);
       }
     `
   }
