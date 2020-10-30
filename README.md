@@ -73,13 +73,15 @@ This element inherits properties from a base class `KaskadiElement`. To see whic
 
 The following custom CSS properties are available for this element:
 
-- `--icon-size`
-- `--background-color`
-- `--outline-color`
-- `--head-color`
-- `--day-color`
-- `--month-color`
-- `--name-color`
+| CSS property name  |   Default   |
+| :----------------- | :---------: |
+| --icon-size        |    `16px`   |
+| --background-color |   `white`   |
+| --outline-color    |    `#333`   |
+| --head-color       | `royalblue` |
+| --day-color        |    `#333`   |
+| --month-color      |   `white`   |
+| --name-color       |    `#333`   |
 <!-- automatically generated documentation will be placed in here -->
 
 <!-- You can customize this template as you'd like! -->
