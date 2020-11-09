@@ -85,3 +85,5 @@ class KaskadiDateIcon extends KaskadiElement {
 }
 
 customElements.define('kaskadi-date-icon', KaskadiDateIcon)
+
+// force
