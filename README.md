@@ -75,9 +75,9 @@ The following custom CSS properties are available for this element:
 | --background-color |   `white`   |
 | --outline-color    |    `#333`   |
 | --head-color       | `royalblue` |
-| --day-color        |    `#333`   |
+| --date-color       |    `#333`   |
 | --month-color      |   `white`   |
-| --name-color       |    `#333`   |
+| --day-color        |    `#333`   |
 <!-- automatically generated documentation will be placed in here -->
 
 <!-- You can customize this template as you'd like! -->
