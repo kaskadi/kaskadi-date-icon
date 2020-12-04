@@ -33,8 +33,8 @@ class KaskadiDateIcon extends KaskadiElement {
         --background-color: white;
         --outline-color: #333;
         --head-color: royalblue;
-        --date-color: #333;
         --month-color: white;
+        --date-color: #333;
         --day-color: #333;
       }
       :host, #outline, #icon {
