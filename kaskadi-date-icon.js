@@ -27,54 +27,11 @@ class KaskadiDateIcon extends KaskadiElement {
 
   static get styles () {
     return css`
-      :host {
-        display: inline-block;
-        --icon-size: 48px;
-        --background-color: white;
-        --outline-color: #333;
-        --head-color: royalblue;
-        --date-color: #333;
-        --month-color: white;
-        --day-color: #333;
-      }
-      :host, #outline, #icon {
-        width: var(--icon-size);
-        height: var(--icon-size);
-      }
-      #outline {
-        background: var(--outline-color);
-        border-radius: calc(15 * var(--icon-size) / 90);
-      }
-      #icon {
-        display: grid;
-        grid-template-rows: repeat(3, auto);
-        box-sizing: border-box;
-        border: calc(5 * var(--icon-size) / 90) solid transparent;
-        border-radius: calc(15 * var(--icon-size) / 90);
-        font-size: calc(35 * var(--icon-size) / 90);
-        overflow: hidden;
-      }
-      #month, #date, #day {
-        text-align: center;
-        font-weight: bold;
-      }
-      #date, #day {
-        background: var(--background-color);
-      }
-      #month {
-        background: var(--head-color);
-        color: var(--month-color);
-        font-size: calc(18em/35);
-      }
-      #date {
-        color: var(--date-color);
-        font-size: 1em;
-      }
-      #day {
-        color: var(--day-color);
-        font-size: calc(14em/35);
-        font-weight: 200;
-      }
+      ${getHostStyle()}
+      ${setSizes()}
+      ${getOutlineStyle()}
+      ${getIconStyle()}
+      ${getSectionsStyle()}
     `
   }
 
@@ -95,6 +52,78 @@ class KaskadiDateIcon extends KaskadiElement {
       </div>
     </div>`
   }
+}
+
+function getHostStyle () {
+  return css`
+    :host {
+      display: inline-block;
+      --icon-size: 48px;
+      --background-color: white;
+      --outline-color: #333;
+      --head-color: royalblue;
+      --date-color: #333;
+      --month-color: white;
+      --day-color: #333;
+    }
+  `
+}
+function setSizes () {
+  return css`
+    :host, #outline, #icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+  `
+}
+
+function getOutlineStyle () {
+  return css`
+    #outline {
+      background: var(--outline-color);
+      border-radius: calc(15 * var(--icon-size) / 90);
+    }
+  `
+}
+
+function getSectionsStyle () {
+  return css`
+    #month, #date, #day {
+      text-align: center;
+      font-weight: bold;
+    }
+    #date, #day {
+      background: var(--background-color);
+    }
+    #month {
+      background: var(--head-color);
+      color: var(--month-color);
+      font-size: calc(18em/35);
+    }
+    #date {
+      color: var(--date-color);
+      font-size: 1em;
+    }
+    #day {
+      color: var(--day-color);
+      font-size: calc(14em/35);
+      font-weight: 200;
+    }
+  `
+}
+
+function getIconStyle () {
+  return css`
+    #icon {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      box-sizing: border-box;
+      border: calc(5 * var(--icon-size) / 90) solid transparent;
+      border-radius: calc(15 * var(--icon-size) / 90);
+      font-size: calc(35 * var(--icon-size) / 90);
+      overflow: hidden;
+    }
+  `
 }
 
 customElements.define('kaskadi-date-icon', KaskadiDateIcon)
