@@ -10,16 +10,16 @@ const { weekDayNames, monthNames } = locals
  *
  * This element inherits properties from a base class `KaskadiElement`. To see which properties are available, please refer to [`KaskadiElement` documentation](https://github.com/kaskadi/kaskadi-element).
  *
- * @module kaskadi-date-icon
+ * @module kaskadi-date-icon-svg
  *
  * @param {string} [date=current date] - date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
  *
  * @example
  *
- * <kaskadi-date-icon date="1975-04-07" style="--icon-size: 16px;"></kaskadi-date-icon>
+ * <kaskadi-date-icon-svg date="1975-04-07" style="--icon-size: 16px;"></kaskadi-date-icon-svg>
  */
 
-class KaskadiDateIcon extends KaskadiElement {
+class KaskadiDateIconSvg extends KaskadiElement {
   constructor () {
     super()
     this.date = Date.now()
@@ -84,4 +84,4 @@ class KaskadiDateIcon extends KaskadiElement {
   }
 }
 
-customElements.define('kaskadi-date-icon', KaskadiDateIcon)
+customElements.define('kaskadi-date-icon-svg', KaskadiDateIconSvg)
