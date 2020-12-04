@@ -28,36 +28,52 @@ class KaskadiDateIcon extends KaskadiElement {
   static get styles () {
     return css`
       :host {
+        display: inline-block;
         --icon-size: 48px;
         --background-color: white;
         --outline-color: #333;
         --head-color: royalblue;
-        --day-color: #333;
+        --date-color: #333;
         --month-color: white;
-        --name-color: #333;
+        --day-color: #333;
       }
-      :host, svg {
+      :host, #outline, #icon {
         width: var(--icon-size);
         height: var(--icon-size);
-        display: inline-block;
-      }
-      #bg {
-        fill: var(--background-color);
       }
       #outline {
-        stroke: var(--outline-color);
+        background: var(--outline-color);
+        border-radius: calc(15 * var(--icon-size) / 90);
       }
-      #head {
-        fill: var(--head-color);
+      #icon {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        box-sizing: border-box;
+        border: calc(5 * var(--icon-size) / 90) solid transparent;
+        border-radius: calc(15 * var(--icon-size) / 90);
+        font-size: calc(35 * var(--icon-size) / 90);
+        overflow: hidden;
       }
-      #day {
-        fill: var(--day-color);
+      #month, #date, #day {
+        text-align: center;
+        font-weight: bold;
+      }
+      #date, #day {
+        background: var(--background-color);
       }
       #month {
-        fill: var(--month-color);
+        background: var(--head-color);
+        color: var(--month-color);
+        font-size: calc(18em/35);
       }
-      #name {
-        fill: var(--name-color);
+      #date {
+        color: var(--date-color);
+        font-size: 1em;
+      }
+      #day {
+        color: var(--day-color);
+        font-size: calc(14em/35);
+        font-weight: 200;
       }
     `
   }
@@ -71,16 +87,13 @@ class KaskadiDateIcon extends KaskadiElement {
   render () {
     const date = new Date(this.date)
     return html`
-    <svg viewBox="0 0 100 100">
-      <rect id="bg" x="5" y="5" width="90" height="90" rx="15" title="bg"/>
-      <path id="head" d="M5 35v -15a 15,15 0 0 1 15 -15h60a15 15 0 0 1 15 15v15z" />
-      <rect id="outline" x="5" y="5" width="90" height="90" rx="15" fill="none" stroke-width="5"/>
-      <g text-anchor="middle" dominant-baseline="middle" font-weight="bold">
-        <text x="50" y="22.5" id="month" class="txt" font-size="18">${monthNames[this.lang][date.getMonth()]} ${date.getFullYear() % 100}</text>
-        <text x="50" y="58" id="day" class="txt" font-size="35">${date.getDate()}</text>
-        <text x="50" y="82" id="name" class="txt" font-size="14px" font-weight="200"  >${weekDayNames[this.lang][date.getDay()]}</text>
-      </g>
-   </svg>`
+    <div id="outline">
+      <div id="icon">
+        <div id="month">${monthNames[this.lang][date.getMonth()]} ${date.getFullYear() % 100}</div>
+        <div id="date">${date.getDate()}</div>
+        <div id="day">${weekDayNames[this.lang][date.getDay()]}</div>
+      </div>
+    </div>`
   }
 }
 
