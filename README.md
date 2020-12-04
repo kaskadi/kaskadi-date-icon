@@ -67,7 +67,17 @@ This element inherits properties from a base class `KaskadiElement`. To see whic
 
 ## Custom styles
 
-No custom CSS properties found in this element.
+The following custom CSS properties are available for this element:
+
+| CSS property name  |   Default   |
+| :----------------- | :---------: |
+| --icon-size        |    `48px`   |
+| --background-color |   `white`   |
+| --outline-color    |    `#333`   |
+| --head-color       | `royalblue` |
+| --date-color       |    `#333`   |
+| --month-color      |   `white`   |
+| --day-color        |    `#333`   |
 <!-- automatically generated documentation will be placed in here -->
 
 <!-- You can customize this template as you'd like! -->
