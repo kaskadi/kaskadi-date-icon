@@ -10,13 +10,13 @@ const { weekDayNames, monthNames } = locals
  *
  * This element inherits properties from a base class `KaskadiElement`. To see which properties are available, please refer to [`KaskadiElement` documentation](https://github.com/kaskadi/kaskadi-element).
  *
- * @module kaskadi-date-icon-svg
+ * @module kaskadi-date-icon
  *
  * @param {string} [date=current date] - date that should be displayed by the element. Supports the same date format as the one you would use when instanciating a new date via the [Date API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
  *
  * @example
  *
- * <kaskadi-date-icon-svg date="1975-04-07" style="--icon-size: 16px;"></kaskadi-date-icon-svg>
+ * <kaskadi-date-icon date="1975-04-07" style="--icon-size: 16px;"></kaskadi-date-icon>
  */
 
 class KaskadiDateIconSvg extends KaskadiElement {
@@ -27,38 +27,9 @@ class KaskadiDateIconSvg extends KaskadiElement {
 
   static get styles () {
     return css`
-      :host {
-        --icon-size: 48px;
-        --background-color: white;
-        --outline-color: #333;
-        --head-color: royalblue;
-        --day-color: #333;
-        --month-color: white;
-        --name-color: #333;
-      }
-      :host, svg {
-        width: var(--icon-size);
-        height: var(--icon-size);
-        display: inline-block;
-      }
-      #bg {
-        fill: var(--background-color);
-      }
-      #outline {
-        stroke: var(--outline-color);
-      }
-      #head {
-        fill: var(--head-color);
-      }
-      #day {
-        fill: var(--day-color);
-      }
-      #month {
-        fill: var(--month-color);
-      }
-      #name {
-        fill: var(--name-color);
-      }
+      ${getHostStyle()}
+      ${setGlobals()}
+      ${getSvgElementsStyle()}
     `
   }
 
@@ -84,4 +55,51 @@ class KaskadiDateIconSvg extends KaskadiElement {
   }
 }
 
-customElements.define('kaskadi-date-icon-svg', KaskadiDateIconSvg)
+function getHostStyle () {
+  return css`
+    :host {
+      --icon-size: 48px;
+      --background-color: white;
+      --outline-color: #333;
+      --head-color: royalblue;
+      --day-color: #333;
+      --month-color: white;
+      --name-color: #333;
+    }
+  `
+}
+
+function setGlobals () {
+  return css`
+    :host, svg {
+      width: var(--icon-size);
+      height: var(--icon-size);
+      display: inline-block;
+    }
+  `
+}
+
+function getSvgElementsStyle () {
+  return css`
+    #bg {
+      fill: var(--background-color);
+    }
+    #outline {
+      stroke: var(--outline-color);
+    }
+    #head {
+      fill: var(--head-color);
+    }
+    #day {
+      fill: var(--day-color);
+    }
+    #month {
+      fill: var(--month-color);
+    }
+    #name {
+      fill: var(--name-color);
+    }
+  `
+}
+
+customElements.define('kaskadi-date-icon', KaskadiDateIconSvg)
